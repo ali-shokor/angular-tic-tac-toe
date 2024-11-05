@@ -79,11 +79,11 @@ export class BoardComponent {
     return this.squares.every(square => square !== null);
   }
   playSound() {
-    const audio = new Audio("../../../public/sounds/click.mp3");
+    const audio = new Audio("click.mp3");
     audio.play();
   }
   winSound() {
-    const audio = new Audio("../sounds/game-finish.wav");
+    const audio = new Audio("sounds/game-finish.wav");
     audio.play();
   }
 }
