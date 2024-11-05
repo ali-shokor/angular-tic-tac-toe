@@ -1,0 +1,68 @@
+header {
+    margin: 0;
+    padding: 0;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+   
+ img {
+    margin-top: 0.4rem;
+    width: 8rem;
+    height: auto;
+    object-fit: contain;
+  }
+  
+   header span {
+    font-size: 2.2rem;
+    font-weight: normal;
+  }
+
+  footer span {
+    line-height: 1.5;
+  }
+
+  #icon{
+    margin-right: 0.2rem;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .welcome-text {
+    text-align: center; 
+    margin: 20px 0; 
+}
+
+.welcome-text span {
+    display: block; /* Display each span as a block */
+    font-size: 2.5rem; /* Font size for the text */
+    font-weight: bold; /* Bold font weight */
+    color: #4A4E69; /* Dark color for the text */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    letter-spacing: 2px; /* Spacing between letters */
+    position: relative; /* Positioning for the pseudo-element */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.welcome-text span:hover {
+    color: #9C73CA; 
+}
+
+.welcome-text span::after {
+    content: ''; /* Empty content for the pseudo-element */
+    display: block; /* Block display */
+    width: 100%; /* Full width for the line */
+    height: 2px; /* Height of the line */
+    background-color: #9C73CA; /* Color for the underline */
+    margin-top: 5px; /* Margin above the line */
+    transform: scaleX(0); /* Start scaled down */
+    transition: transform 0.3s ease; /* Transition for scaling */
+}
+
+.welcome-text span:hover::after {
+    transform: scaleX(1); 
+}

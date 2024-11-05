@@ -1,0 +1,38 @@
+<article>
+    @if(winner) {
+        @if(player === "X" && winner !== "Tie") {
+            <h2 class="turn blue">Player {{ player }} Win</h2>
+        }
+        @else if (player === "O" && winner !== "Tie"){
+            <h2 class="turn red">Player {{ player }} Win</h2>
+        }
+        @else {
+            <h2 class="turn scoreboard" style="color: white !important;">Tie</h2>
+        }
+    }
+    @else {
+    <h2 class="turn">Player Turn: {{ player }}</h2>
+    }
+    <main>
+        @for (square of squares; track squares; let i = $index) {
+            @if(winnerLine) {
+                @if(squares[winnerLine[0]] === 'X') {
+                    <app-sqaure [value]="square" [winnerLine]="winnerLine" (click)="makeMove(i)" [class.xwinner]="winnerLine.includes(i)" />
+                }
+                @else if (squares[winnerLine[0]] === 'O'){
+                    <app-sqaure [value]="square" [winnerLine]="winnerLine" (click)="makeMove(i)" [class.owinner]="winnerLine.includes(i)" />
+                }
+            }
+            @else {
+            <app-sqaure [value]="square" (click)="makeMove(i)" />
+            }
+        }
+    </main>
+    
+    
+    <p>
+        <button type="button" (click)="newGame()">
+            New Game
+        </button>
+    </p>
+</article>

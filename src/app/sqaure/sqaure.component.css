@@ -1,0 +1,64 @@
+.regularButton {
+    width: 6rem;
+    height: 6rem;
+    font-size: 4em;
+    background-color: rgb(68, 73, 157);
+    color: rgba(251, 247, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: rgb(80, 85, 175); /* Brighter color on hover */
+    color: rgba(251, 247, 255, 0.95);
+    box-shadow: 0px 8px 16px rgba(80, 85, 175, 0.6); /* Soft glow effect */
+    transform: translateY(-4px) scale(1.05); /* Slight lift and scale */
+}
+
+button:active {
+    background-color: rgb(60, 65, 140); /* Slightly darker shade on click */
+    color: rgba(251, 247, 255, 1);
+    transform: translateY(2px) scale(0.98); /* Subtle press-down effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Reduced shadow for pressed look */
+}
+
+.xturn, .oturn {
+    font-size: 4rem;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.xturn {
+    color: #3498db;
+    text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.5);
+    animation: Animate 0.5s ease forwards;
+}
+
+.xturn:hover {
+    color: #2980b9;
+    transform: scale(1.1);
+}
+
+.oturn {
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.5);
+    animation: Animate 0.5s ease forwards;
+}
+
+@keyframes Animate {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.oturn:hover {
+    color: #c0392b;
+    transform: scale(1.1);
+}

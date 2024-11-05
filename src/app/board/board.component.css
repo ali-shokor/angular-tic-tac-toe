@@ -1,0 +1,132 @@
+article {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.35rem 1.75rem;
+  border-radius: 50px; 
+  background: linear-gradient(135deg, #9c73ca, #a888d0);
+  color: #EEEEEE;
+  margin-top: 1.3rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 12px rgba(156, 115, 202, 0.5);
+  transition: 0.4s ease;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+button[type="button"]:hover {
+  background: linear-gradient(135deg, #a888d0, #9c73ca);
+  color: #f2f2f2;
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0px 8px 20px rgba(80, 85, 175, 0.6), 0px 0px 15px rgba(255, 255, 255, 0.3);
+  animation: pulse 1s infinite ease-in-out;
+}
+
+/* Active (pressed) state */
+button[type="button"]:active {
+  transform: translateY(2px) scale(0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #8a5cbf, #9c73ca);
+  color: #f0e4f7;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 16px rgba(80, 85, 175, 0.5), 0px 0px 12px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+      transform: scale(1.1);
+      box-shadow: 0px 12px 24px rgba(80, 85, 175, 0.7), 0px 0px 20px rgba(255, 255, 255, 0.4);
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  gap: 0px; 
+}
+
+  app-square {
+    border: 1px rgb(6, 6, 6) solid; 
+    }
+
+    .xwinner {
+      background: linear-gradient(145deg, #4e54c8, #8f94fb);
+      color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(144, 202, 249, 0.8), 0 0 20px rgba(144, 202, 249, 0.5);
+      transition: background 0.5s ease, transform 0.3s ease;
+      animation: xglow 1.5s infinite alternate;
+  }
+  
+  @keyframes xglow {
+      from {
+          box-shadow: 0 0 10px rgba(11, 145, 255, 0.8), 0 0 20px rgba(116, 192, 255, 0.5);
+      }
+      to {
+          box-shadow: 0 0 20px rgb(17, 148, 255), 0 0 30px rgba(118, 188, 245, 0.7);
+      }
+  }
+  .owinner {
+    background: linear-gradient(145deg, #4e54c8, #8f94fb);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(144, 202, 249, 0.8), 0 0 20px rgba(144, 202, 249, 0.5);
+    transition: background 0.5s ease, transform 0.3s ease;
+    animation: oglow 1.5s infinite alternate;
+}
+
+@keyframes oglow {
+    from {
+        box-shadow: 0 0 10px rgba(252, 57, 57, 0.8), 0 0 20px rgba(116, 192, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgb(255, 57, 17), 0 0 30px rgba(245, 118, 118, 0.7);
+    }
+}
+
+.turn {
+  font-size: 2rem; /* Font size for the heading */
+  font-weight: bold; /* Bold font weight */
+  color: #4A4E69; /* Darker color for the text */
+  text-align: center; /* Center align the text */
+  text-transform: uppercase; /* Make the text uppercase */
+  letter-spacing: 2px; /* Space between letters */
+  margin: 20px 0; /* Margin above and below */
+  position: relative; /* Positioning for the pseudo-element */
+}
+
+.turn::after {
+  content: ''; /* Empty content for the pseudo-element */
+  display: block; /* Block display */
+  width: 50%; /* Width of the line */
+  height: 4px; /* Height of the line */
+  background-color: #9C73CA; /* Color for the underline */
+  margin: 10px auto; /* Center align the underline */
+  border-radius: 2px; /* Rounded edges for the line */
+  transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.turn:hover::after {
+  transform: scaleX(1.2); 
+}
+ .blue {
+  color: rgba(52, 152, 219, 1);
+  animation: xglow 1.5s infinite alternate;
+  padding: 5px;
+ }
+
+ .red {
+  color: rgba(231, 76, 60, 1);
+  animation: oglow 1.5s infinite alternate;
+  padding: 5px;
+ }
